@@ -31,16 +31,9 @@
         margin-bottom: 1.5rem;
       }
       header a {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background: #4f46e5;
-        color: #fff;
-        border-radius: 6px;
         text-decoration: none;
-        font-weight: 600;
       }
       section {
-        padding: 3rem 2rem;
         max-width: 800px;
         margin: 0 auto;
       }
@@ -58,19 +51,60 @@
         border-radius: 8px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
       }
+      .products {
+        margin: 0;
+      }
       footer {
         text-align: center;
         font-size: 0.9rem;
         color: #888;
         padding: 2rem;
       }
+
+      @media (max-width: 1024px) {
+        section {
+          max-width: 800px;
+          padding: 0rem 1rem;
+        }
+      }
+      .logo {
+        max-width: 100%;
+        width: 300px;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .text-input,
+      .text-area {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+      .text-area {
+        min-height: 200px;
+      }
+      .button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: #4f46e5;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1><img src="./static/images/logo.svg" width="300px" /></h1>
-      <p>Precision coaching for aesthetics, wellness, and health</p>
-      <a href="#notify">Join the Waitlist</a>
+      <h1><img src="./static/images/logo.svg" class="logo" /></h1>
+      <p>Precision AI coaching for aesthetics, wellness, and health</p>
+      <a href="#notify" class="button">Join the Waitlist</a>
     </header>
 
     <section>
@@ -96,33 +130,65 @@
             and overall physiological well-being.
           </p>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>More Than an App — An Intelligent System</h2>
+      <div class="features">
         <div class="feature">
-          <h3>Expert-Caliber Systems</h3>
+          <h3>Adaptive Logic</h3>
           <p>
-            Built with insights from competitive coaching, sports science, and
-            real-world transformation.
+            Dynamic coaching that adjusts to your progress, preferences, and
+            biofeedback.
           </p>
         </div>
         <div class="feature">
+          <h3>Expert-Level Intelligence</h3>
+          <p>
+            Built with insights from competitive coaching, sports science, and
+            real-world transformation, not just generic AI scripts.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Context-Aware Planning</h3>
+          <p>Every suggestion is goal-driven — not just templated advice.</p>
+        </div>
+        <div class="feature">
           <h3>Web + App Experience</h3>
-          <p>Multi-platform access to coaching tools wherever you train.</p>
+          <p>Multi-platform access to coaching tools at home or on the go.</p>
         </div>
       </div>
     </section>
 
     <section>
       <h2>Coming Soon</h2>
-      <ul>
+      <ul class="products">
         <li>Revexa Physique – Max Hypertrophy</li>
         <li>Revexa Physique – Prep Assistant</li>
-        <li>Revexa Recomp – Lean Bulk Cycle</li>
+        <li>Revexa Physique – Sculpt & Recomp</li>
         <li>Revexa Wellness – Recovery Path</li>
+        <li>Revexa Health – Metrics Monitor</li>
       </ul>
     </section>
 
     <section id="notify">
       <h2>Stay in the Loop</h2>
-      <p>Email capture form coming soon.</p>
+      <form action="https://formspree.io/f/mqabevrl" method="POST" class="form">
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email address"
+          required
+          class="text-input"
+        />
+        <textarea
+          name="message"
+          class="text-area"
+          placeholder="Tell us your goals. We'll build the tools to match. (Optional)"
+        ></textarea>
+        <button type="submit" class="button">Join the Waitlist</button>
+      </form>
     </section>
 
     <footer>&copy; 2025 Revexa. All rights reserved.</footer>
